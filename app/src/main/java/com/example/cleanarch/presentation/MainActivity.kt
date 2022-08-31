@@ -7,19 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.cleanarch.R
-import com.example.cleanarch.data.repository.UserRepositoryImpl
-import com.example.cleanarch.data.storage.sharedPrefs.SharedPrefUserStorage
-import com.example.domain.models.SaveParam
-import com.example.domain.models.UserName
-import com.example.domain.usecase.GetUserNameUseCase
-import com.example.domain.usecase.SaveUserNameUseCase
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var vm: MainViewModel
+    private val vm by viewModel<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("AAA", "Activity Created")
 
-        vm = ViewModelProvider(this, MainViewModelFactory(this))
-            .get(MainViewModel::class.java)
 
         val dataTextView = findViewById<TextView>(R.id.dataTextView)
         val dataEditView = findViewById<EditText>(R.id.dataEditText)
