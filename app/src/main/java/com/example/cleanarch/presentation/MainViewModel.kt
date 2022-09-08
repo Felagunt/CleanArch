@@ -4,8 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cleanarch.data.repository.UserRepositoryImpl
-import com.example.cleanarch.data.storage.sharedPrefs.SharedPrefUserStorage
 import com.example.domain.models.SaveParam
 import com.example.domain.models.UserName
 import com.example.domain.usecase.GetUserNameUseCase
